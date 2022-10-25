@@ -29,3 +29,5 @@ if "$User"=="Jade"{
 do "$Dos\01_CleanConcentradoHogares.do"
 do "$Dos\02_CleanLivingPlaceCharacteristics.do"
 do "$Dos\03_VariableConstruction.do"
+
+*Hello world
