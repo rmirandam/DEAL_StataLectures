@@ -5,7 +5,7 @@
 
 
 *Initial commands
-clear
+clear all
 set more off
 set maxvar 5000
 pause off
@@ -24,6 +24,7 @@ if "$User"=="Ricardo"{
 }
 
 if "$User"=="Jade"{
+	
 }
 
 do "$Dos\01_CleanConcentradoHogares.do"

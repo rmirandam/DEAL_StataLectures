@@ -71,7 +71,7 @@ hist educacion if educacion<500
 ********************************************************************************
 *Rename variables and label them
 ********************************************************************************
-keep ïfolioviv foliohog edad_jefe ing_cor educacion sexo_jefe
+keep ïfolioviv foliohog edad_jefe ing_cor educacion sexo_jefe tot_integ
 
 *Note: The id variables are renamed but never modified
 rename ïfolioviv LivingPlace
@@ -80,6 +80,7 @@ rename edad_jefe HHeadAge
 rename ing_cor FlowIncome
 rename educacion EducExpenditure
 rename sexo_jefe HHeadSex
+rename tot_integ HouseholdSize
 
 label variable LivingPlace "Living place ID"
 label variable HouseholdID "Household ID within living place ID"
@@ -87,6 +88,7 @@ label variable HHeadAge "Age of the household head"
 label variable FlowIncome "Household's monthly flow income"
 label variable EducExpenditure "Household's monthly expenditure in education"
 label variable HHeadSex "Sex of household head"
+label variable HouseholdSize "Household size"
 
 label define HHeadSex 1 "Male" 2 "Female"
 label values HHeadSex HHeadSex
@@ -106,5 +108,8 @@ drop expInEducation expenditure_in_edu
 ********************************************************************************
 export delimited "$Working\concentradohogar_clean.csv", replace
 save "$Working\EducationAndIncommeSummary.dta", replace
+
+
+
 
  
