@@ -58,7 +58,7 @@ rename FlowIncome FlowIncome_2
 rename HouseholdID HouseholdID_2
 
 *Question: What identifies an observation in this dataset?
-egen HouseholdsPairID=group(HouseholdID_1 HouseholdID_2) 
+egen HouseholdsPairID=group(HouseholdID_1 HouseholdID_2 LivingPlace) 
 
 *Now we can create all the within-living place differerences in income
 bysort LivingPlace: gen Aux=_N
@@ -79,7 +79,7 @@ hist DifflogFlowIncome
 bysort LivingPlace: egen MaxDifflogFlowIncome=max(DifflogFlowIncome)
 
 *Dificult task: Create an indicator for the within-group maximum
-bysort LivingPlace: gen MaxDifflogFlowIncome_Ind=MaxDifflogFlowIncome==DifflogFlowIncome
+bysort LivingPlace: gen MaxDifflogFlowIncome_Ind=(MaxDifflogFlowIncome==DifflogFlowIncome)
 
 sort LivingPlace
 br LivingPlace *DifflogFlowIncome*
